@@ -1,0 +1,1 @@
+importScripts('vendor/cube.js','vendor/solve.js');let ready=false;onmessage=e=>{try{if(!ready){Cube.initSolver();ready=true}postMessage({moves:Cube.fromString(e.data).solve()})}catch{postMessage({error:true})}};
